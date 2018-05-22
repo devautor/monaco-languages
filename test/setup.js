@@ -1,32 +1,32 @@
-
 define('vs/css', [], {
-	load: function (name, req, load) {
+	load: function(name, req, load) {
 		load({});
 	}
 });
 
 define('vs/nls', [], {
-	create: function () {
+	create: function() {
 		return {
-			localize: function () {
+			localize: function() {
 				return 'NO_LOCALIZATION_FOR_YOU';
 			}
 		};
 	},
-	localize: function () {
+	localize: function() {
 		return 'NO_LOCALIZATION_FOR_YOU';
 	},
-	load: function (name, req, load) {
+	load: function(name, req, load) {
 		load({});
 	}
 });
 
-define(['require'], function (require) {
+define(['require'], function(require) {
 	requirejs([
 		'vs/editor/editor.main'
-	], function () {
+	], function() {
 		requirejs([
 			'release/dev/bat/bat.test',
+			'release/dev/calsci/calsci.test',
 			'release/dev/css/css.test',
 			'release/dev/coffee/coffee.test',
 			'release/dev/cpp/cpp.test',
@@ -65,12 +65,12 @@ define(['require'], function (require) {
 			'release/dev/redis/redis.test',
 			'release/dev/csp/csp.test',
 			'release/dev/st/st.test',
-		], function () {
+		], function() {
 			run(); // We can launch the tests!
-		}, function (err) {
+		}, function(err) {
 			console.log(err);
 		});
-	}, function (err) {
+	}, function(err) {
 		console.log(err);
 	});
 });
